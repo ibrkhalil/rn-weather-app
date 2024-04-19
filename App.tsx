@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
+import { Canvas, LinearGradient, Rect, vec } from '@shopify/react-native-skia'
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Canvas style={{ flex: 1 }}>
+      <Rect x={100} y={100} width={200} height={200}>
+        <LinearGradient
+          start={vec(0, 0)}
+          end={vec(300, 350)} colors={['red', 'green']} />
+      </Rect>
+    </Canvas>
   );
 }
 
