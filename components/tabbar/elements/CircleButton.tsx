@@ -9,7 +9,6 @@ import { Canvas, Circle, Line, LinearGradient, Shadow, vec } from '@shopify/reac
  
  const CircleButton = ({radius, pressed}:CircleButtonProps) => {
    const diameter = 2 * radius;
-   console.log(pressed)
     return (
      <Canvas style={{width: diameter, height: diameter}}>
         <Circle cx={radius} cy={radius} r={radius}>
