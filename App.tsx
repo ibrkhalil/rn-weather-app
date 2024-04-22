@@ -1,14 +1,10 @@
-import HomeBackground from './components/HomeBackground';
-import { StatusBar } from 'expo-status-bar';
-import WeatherTabBar from './components/tabbar/WeatherTabBar';
-import WeatherInfo from './components/section/WeatherInfo';
-import { currentWeather } from './data/CurrentWeather';
+import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import ForecastSheet from './components/sheet/ForecastSheet';
+import Home from './screens/Home';
 
 SplashScreen.preventAutoHideAsync(); // Keep splash screen on while fonts are loading.
 
@@ -29,10 +25,7 @@ export default function App() {
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
             <SafeAreaProvider onLayout={onLayoutRootView}>
-                <HomeBackground />
-                <WeatherInfo weather={currentWeather} />
-                <ForecastSheet />
-                <WeatherTabBar />
+                <Home />
                 <StatusBar style="light" />
             </SafeAreaProvider>
         </GestureHandlerRootView>

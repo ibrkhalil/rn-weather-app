@@ -2,12 +2,15 @@ import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import React from 'react';
 import ArcComponent from './elements/ArcComponent';
 import TabBarItems from './elements/TabBarItems';
+import { BlurView } from 'expo-blur';
 
 const WeatherTabBar = () => {
     const tabBarHeight = 88;
     const { width, height } = useWindowDimensions();
     return (
-        <View
+        <BlurView
+            intensity={50}
+            tint='dark'
             style={{
                 height: tabBarHeight,
                 ...StyleSheet.absoluteFillObject,
@@ -17,7 +20,7 @@ const WeatherTabBar = () => {
         >
             <ArcComponent height={tabBarHeight} width={width} />
             <TabBarItems />
-        </View>
+        </BlurView>
     );
 };
 
